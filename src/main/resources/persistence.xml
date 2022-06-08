@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+	<persistence-unit name="jpaency_mysql">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.osxm.jpa.entity.Usr</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://127.0.0.1:3306/jpaency" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user"
+				value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="123456" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="jpaency_h2">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- <class>cn.osxm.jpa.entity.User</class> -->
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:h2:mem:jpaency" />
+			<property name="javax.persistence.jdbc.driver"
+				value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.user"
+				value="oscar999" />
+			<property name="javax.persistence.jdbc.password"
+				value="oscar999" />
+		</properties>
+	</persistence-unit>
+</persistence>
