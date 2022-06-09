@@ -49,6 +49,16 @@ public class APITests {
 	}
 	
 	
+	@Test
+	public void persist() {
+		Usr usr = new Usr();
+		usr.setId(4);
+		usr.setName("赵云");
+		entityManager.persist(usr);
+		System.out.println("Done");
+	}
+	
+	
 	@BeforeAll
 	public static void setup() {
 		String persistenceUnitName = "jpaency_mysql";
