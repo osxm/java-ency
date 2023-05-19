@@ -37,7 +37,7 @@ public class APITests {
 	 * 调试方式运行
 	 * Debug As --> JUnit Test
 	 */
-	@Test
+	//@Test
 	public void refresh() {
 		Usr usr = entityManager.find(Usr.class, 1);
 		usr.setName("刘备");
@@ -49,14 +49,48 @@ public class APITests {
 	}
 	
 	
-	@Test
+	//@Test
 	public void persist() {
 		Usr usr = new Usr();
 		usr.setId(4);
 		usr.setName("赵云");
+		entityManager.getTransaction().begin();
 		entityManager.persist(usr);
+		entityManager.getTransaction().commit();//主键手动设置，事务提交时发送SQL 
 		System.out.println("Done");
 	}
+	
+	//@Test
+	public void merge() {
+		Usr usr = new Usr();
+		usr.setId(4);
+		usr.setName("赵云");
+		entityManager.getTransaction().begin();
+		entityManager.merge(usr);
+		entityManager.getTransaction().commit();
+	}
+	
+	//@Test
+	public void flush() {
+		Usr usr = entityManager.find(Usr.class,4);
+		usr.setName("赵云3");
+		entityManager.getTransaction().begin();	
+		entityManager.flush(); //如果对象有改动，此句会发出更新语句
+		entityManager.getTransaction().commit();
+		
+	}
+	
+	@Test
+	public void detachAfterCommit() {
+		Usr usr = new Usr();
+		usr.setId(4);
+		usr.setName("赵云");
+		entityManager.getTransaction().begin();
+		entityManager.merge(usr);
+		entityManager.getTransaction().commit();
+		Assertions.assertTrue(!entityManager.contains(usr));
+	}
+	
 	
 	
 	@BeforeAll
