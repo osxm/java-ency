@@ -11,6 +11,8 @@ package com.osxm.je.topic.date;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
@@ -61,5 +63,11 @@ public class LocalDateTimeDemo {
 		LocalDateTime endDateTime = LocalDateTime.of(2022, 12, 31, 23, 59, 59);
 		Duration duration = Duration.between(startDateTime, endDateTime); // 计算时间间隔
 		long minutes = duration.toMinutes(); // 获取分钟数
+	}
+	
+	@Test 
+	public void tranZoneDate() {
+		LocalDateTime localdateTime = LocalDateTime.of(2023, 8, 8, 23, 59, 59); // 指定日期和时间
+		ZonedDateTime utc8DateTime= ZonedDateTime.of(localdateTime, ZoneId.of("UTC+8"));
 	}
 }

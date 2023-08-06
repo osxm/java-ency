@@ -9,7 +9,6 @@
 */
 package com.osxm.je.topic.httpclient;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.http.HttpEntity;
