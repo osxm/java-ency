@@ -44,7 +44,7 @@ public class JjwtDemo {
 	// @Test
 	public void signJwt()
 			throws NoSuchAlgorithmException, InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
-		String header = "{\"alg\":\"HS257\"}";
+		String header = "{\"alg\":\"HS256\"}";
 		String payload = "{\"sub\":\"oscar\"}";
 		Key secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 		String encodedHeader = Base64.getEncoder().encodeToString(header.getBytes());
