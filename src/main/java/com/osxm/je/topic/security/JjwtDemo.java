@@ -23,7 +23,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
