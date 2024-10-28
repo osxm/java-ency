@@ -12,7 +12,7 @@ package com.osxm.je.topic.security;
 import java.security.Key;
 import java.util.Date;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

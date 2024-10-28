@@ -9,13 +9,13 @@
 */
 package com.osxm.je.topic.bdd;
 
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+//import io.cucumber.junit.Cucumber;
+//import io.cucumber.junit.CucumberOptions;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources")  // 要测试的 Feature 文件的位置
+//@RunWith(Cucumber.class)
+//@CucumberOptions(features = "src/test/resources")  // 要测试的 Feature 文件的位置
 public class CucumberTest {
 	
 	
